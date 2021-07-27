@@ -1,0 +1,17 @@
+
+<mat-card  multi="false" *ngFor= "let x of p" >
+  <p ([ngModel])= "tname">{{"name: "+x.name}} </p>
+  <P ([ngModel])="tcal">{{"calories: "+x.calories}}</P>
+  <img style="height: 50%; width: 50%;" ([ngmodel])="turl"src={{x.url}}>
+
+    <mat-form-field  >
+
+
+      <mat-label>Quantity</mat-label>
+      <input matInput type ="number" [(ngModel)]= "quantity">
+    </mat-form-field>
+    <br>
+    <button (click)="onfinaladd()" mat-raised-button color="primary" type="submit">add quantity</button>
+
+
+  </mat-card>

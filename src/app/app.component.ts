@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'calorie';
+  posts:any[] = [];
+
+
+   onPostAdded(post:any){
+
+     this.posts.push(post);
+}
+
+
 }
