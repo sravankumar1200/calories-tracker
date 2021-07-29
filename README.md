@@ -1,5 +1,5 @@
 # calories-tracker
-Front end: Angular Material
+Frontend: Angular Material
 
 Validation:
 Typescript 
