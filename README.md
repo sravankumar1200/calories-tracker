@@ -1,3 +1,4 @@
 # calories-tracker
-Technologies used:
-Typescript and Angular 
+Technologies used
+Front end: Angular Material
+Validation : Typescript 
