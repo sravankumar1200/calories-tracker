@@ -1,3 +1,3 @@
 # calories-tracker
-Tehnologies used:
-Angular
+Technologies used:
+Type script and Angular 
