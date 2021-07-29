@@ -13,6 +13,8 @@ import { InputComponent } from './input/input.component';
 import { DisplayTotalComponent } from './display-total/display-total.component';
 import { DisplayboxComponent } from './displaybox/displaybox.component';
 
+import { EventEmitterService } from './event-emitter.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,10 +32,10 @@ import { DisplayboxComponent } from './displaybox/displaybox.component';
     MatFormFieldModule,
     MatCardModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
 
   ],
-  providers: [],
+  providers: [EventEmitterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

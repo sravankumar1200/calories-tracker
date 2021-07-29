@@ -1,30 +1,39 @@
-<br>
-<mat-card>
 
-<br>
+<mat-card style="width: 500px;height: 500px;">
+
+
 <mat-form-field >
   <mat-label>Name </mat-label>
-  <input matInput type="text" [(ngModel)]= "enteredname">
+  <input matInput  type="text" [(ngModel)]= "enteredname">
 
 </mat-form-field>
 <br>
 <mat-form-field >
   <mat-label>calories</mat-label>
-  <input matInput type ="text" [(ngModel)]= "enteredcalories">
+  <input matInput type ="number" [(ngModel)]= "enteredcalories">
+</mat-form-field>
+<br>
+<mat-form-field >
+  <mat-label>quantity</mat-label>
+  <input matInput  placeholder="hi" type ="number" [(ngModel)]= "quantity">
 </mat-form-field>
 <br>
 
 <mat-form-field >
   <mat-label>image</mat-label>
-  <input matInput type ="text" [(ngModel)]= "enteredurl">
+  <input matInput  palceholder="image"type ="text" [(ngModel)]= "enteredurl">
 
 </mat-form-field>
-<br>
+
+
+
 
 <button (click)="onAdd()"mat-raised-button color="warn">add food</button>
+
+
+</mat-card>
+
 <app-displaybox [items]= "posts"></app-displaybox>
-
-
 
 
 

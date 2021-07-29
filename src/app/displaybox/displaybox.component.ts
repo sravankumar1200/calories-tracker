@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { EventEmitterService } from '../event-emitter.service';
 
 @Component({
   selector: 'app-displaybox',
@@ -6,45 +7,25 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./displaybox.component.css']
 })
 export class DisplayboxComponent implements OnInit {
-  @Input("items") p:any;
-  posts=[{name:"food",calories:" as shown",url:"as entered"}
-];
-  quantity=0
-  tname=''
-  tcal=''
-  turl=''
-  ar:any[] = [];
 
-  onfinaladd(){
-    var n=this.quantity
-    if(n==0 || n<0){
-      window.alert("enter quantity correctly")
+  @Input("items") p:any;
+  //@Input("items")s:any;
+  q=[];
+
+  onremove(name:string){
+    for(var i=0;i<this.p.length;i++){
+      var cart_items = JSON.parse(localStorage["posts"]);
+      for (i=0;i<cart_items.length;i++)
+     if (cart_items[i].name === name) cart_items.splice(i,1);
     }
-    var post= {
-      yname:this.tname,
-      ycalories:this.tcal,
-      yurl:this.turl,
-      yq:this.quantity
-    };
-   this.ar.push(post);
-   console.log(this.ar);
+   localStorage["posts"] = JSON.stringify(cart_items);
+   this.eventEmitterService.onFirstComponentButtonClick();
 
 
 
   }
 
-
-
-
-
-//fs.writeFileSync(path.resolve(__dirname, 'student.json'), JSON.stringify(student))
-
-
-
-
-
-
-  constructor() { }
+  constructor(private eventEmitterService:EventEmitterService) { }
 
   ngOnInit(): void {
   }
